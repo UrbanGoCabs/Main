@@ -80,8 +80,7 @@ span{
     vertical-align: middle;
     font-size: 20px;
     color: var(--text-color);
-    margin-right: 18px;
-    margin-left: 5px;
+    margin-right: 12px;
     transition: all .50s ease;
 }
 
