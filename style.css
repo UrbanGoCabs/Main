@@ -91,7 +91,7 @@ span{
 
 #menu-icon{
     color: var(--text-color);
-    font-size: 30px;
+    font-size: 26px;
     cursor: pointer;
     z-index: 10001;
     display: none;
@@ -344,7 +344,7 @@ header.sticky{
 
 .footer{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     gap: 2rem;
 }
 
@@ -354,7 +354,7 @@ header.sticky{
 }
 
 .footer-box h3{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 15px;
 }
@@ -396,12 +396,12 @@ header.sticky{
     text-align: center;
     padding: 20px;
     color: #979797;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 @media (max-width: 1700px){
     header{
-        padding: 18px 9%;
+        padding: 18px 8%;
     }
     header.sticky{
         padding: 7px 8%;
@@ -413,13 +413,13 @@ header.sticky{
 
 @media (max-width: 1200px){
     header{
-        padding: 14px 6%;
+        padding: 14px 5%;
     }
     header.sticky{
         padding: 7px 5%;
     }
     section{
-        padding: 50px 5% 40px;
+        padding: 45px 5% 35px;
     }
     :root{
         --h1-font: 4.6rem;
@@ -427,7 +427,7 @@ header.sticky{
         --p-font: 15px;
     }
     .home{
-         height: 100vh;
+         height: 105vh;
     }
 }
 
@@ -438,7 +438,7 @@ header.sticky{
     .holiday{
         gap: 3rem;
     }
-    .tours{
+    .culture{
         gap: 3rem;
     }
     #menu-icon{
@@ -489,18 +489,18 @@ header.sticky{
         --h2-font: 2.1rem;
     }
     .home{
-        height: 100vh;
+        height: 105vh;
     }
 }
 
 @media (max-width: 450px){
     header{
-        padding: 12px 6%;
+        padding: 12px 3%;
     }
     header.sticky{
-        padding: 7px 6%;
+        padding: 7px 3%;
     }
     section{
-        padding: 60px 4% 50px;
+        padding: 60px 3% 50px;
     }
 }
