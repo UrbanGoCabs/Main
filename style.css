@@ -402,7 +402,7 @@ header.sticky{
 
 @media (max-width: 1700px){
     header{
-        padding: 18px 8%;
+        padding: 18px 9%;
     }
     header.sticky{
         padding: 7px 8%;
@@ -414,7 +414,7 @@ header.sticky{
 
 @media (max-width: 1200px){
     header{
-        padding: 14px 5%;
+        padding: 14px 6%;
     }
     header.sticky{
         padding: 7px 5%;
@@ -428,7 +428,7 @@ header.sticky{
         --p-font: 15px;
     }
     .home{
-        height: 90vh;
+         height: 100vh;
     }
 }
 
@@ -490,18 +490,18 @@ header.sticky{
         --h2-font: 2.1rem;
     }
     .home{
-        height: 85vh;
+        height: 100vh;
     }
 }
 
 @media (max-width: 450px){
     header{
-        padding: 12px 3%;
+        padding: 12px 6%;
     }
     header.sticky{
-        padding: 7px 3%;
+        padding: 7px 6%;
     }
     section{
-        padding: 60px 3% 50px;
+        padding: 60px 4% 50px;
     }
 }
