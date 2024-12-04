@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UrbanGoCabs</title>
+    <title>UrbanGocabs</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -58,7 +58,7 @@ family=Open+Sans:ital,wght@0300;400;500,600;700;800&display=swap" rel="styleshee
             all-India cab services, connecting Agra to cities across India with one-way, round-trip, and intercity travel options. 
             Enjoy a seamless journey, whether you're a domestic or international traveler, with Urbango Cabs—your gateway to Agra and beyond."</p>
 
-            <a href="#" class="btn">Book Now!</a>
+            <a href="https://wa.me/917900505750" class="btn">Book Now!</a>
 
         </div>
 
@@ -177,20 +177,25 @@ family=Open+Sans:ital,wght@0300;400;500,600;700;800&display=swap" rel="styleshee
 
         <!--Booking Form-->
         <section class="form">
-            <div class="form-content">
-                <div class="form-text">
-                    <h2>Ready To Ride!</h2>
-                    <p></p>
-                </div>
-
-                <form action="">
-                    <input type="Mobile No." placeholder="Enter Your Mobile No...."
-                    required>
-                    <input type="submit" value="Book" class="btn">
+            <div class="form-container">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+                    <div class="contact-left-title">
+                        <h2>Ready To <span>#Ride</span></h2>
+                        <hr>
+                    </div>
+                    <input type="hidden" name="access_key" value="13f5176c-8bd6-4228-9e40-20e18a5ed34f">
+                    <input type="text" name="name" placeholder="Full Name" class="contact-input" required>
+                    <input type="email" name="email" placeholder="Email ID" class="contact-input" required>
+                    <input type="Mobile No." name="mobile no." placeholder="Mobile No." class="contact-input" required>
+                    <button type="submit">Book</button>
                 </form>
-
+            <div class="contact-right" >
+                <img src="urbangoimages/back5.png">
             </div>
-        </sectionclass>
+        
+                </div>
+            </div>
+        </section>
 
         <!--Footer Section-->
 
@@ -235,7 +240,7 @@ family=Open+Sans:ital,wght@0300;400;500,600;700;800&display=swap" rel="styleshee
 
     <!--custom js file link-->
 
-    <script src="script.js"></script>
+    <script src="scriptgo4.js"></script>
     
 </body>
 </html>
