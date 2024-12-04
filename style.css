@@ -307,37 +307,83 @@ header.sticky{
 }
 
 /**Form Section**/
-.form-content{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+.form-container{
+    height: 100vh;
+    display: flex;
     align-items: center;
-    gap: 2rem;
+    justify-content: space-evenly;
 }
 
-.form-text h2{
-    font-size: var(--h2-font);
+.contact-left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.contact-left-title h2{
     font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.form-text p{
-    font-size: var(--p-font);
-    font-weight: 600;
     color: #ffffffab;
+    font-size: var(--h2-font);
+    margin-bottom: 5px;
 }
 
-.form-content form{
-    display: grid;
-    grid-template-columns: 1fr 0.4fr;
-    gap: 1rem;
+.contact-left-title h2 span{
+    color: var(--main-color);
 }
 
-.form-content form input:first-child{
-    padding: 15px;
-    background: #202020;
-    font-size: var(--p-font);
+.contact-left-title hr{
+    border: none;
+    width: 150px;
+    height: 4px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-input{
+    width: 350px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 50px;
+}
+
+.contact-input:focus{
+    border: 2px solid var(--main-color);
+}
+
+.contact-input::placeholder{
+    color: #a9a9a9;
+}
+
+.contact-left button{
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: 600;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: var(--main-color);
+    cursor: pointer;
+    transition: all .50s ease;
+}
+
+.contact-left button:hover{
+    transform: translateX(6px);
+    border: 2px solid var(--text-color);
+    background: transparent;
     color: var(--text-color);
-    border-radius: 5px;
+}
+
+.contact-right img{
+    width: 400px;
 }
 
 /**Footer Section**/
@@ -481,6 +527,12 @@ header.sticky{
     .form-content{
         grid-template-columns: 1fr;
     }
+    .form-container{
+        width: 80vw;
+    }
+    .contact-right{
+        display: none;
+    }
 }
 
 @media (max-width: 600px){
@@ -503,4 +555,5 @@ header.sticky{
     section{
         padding: 60px 3% 50px;
     }
+    
 }
