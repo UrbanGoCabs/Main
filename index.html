@@ -1,307 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UrbanGocabs</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!--remix icons-->
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet" />
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
-
-    <!--google fonts link-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?
-family=Open+Sans:ital,wght@0300;400;500,600;700;800&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urbango Cabs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=REPLACE_WITH_YOUR_VALID_API_KEY&callback=initMap"></script>
 </head>
-<body>
+<body class="bg-white text-gray-800 font-sans">
 
-    <!--header-->
+<!-- Header -->
+<header class="p-4 flex justify-between items-center shadow-lg bg-gradient-to-r from-black via-gray-900 to-black text-white">
+  <div class="text-2xl font-bold text-green-400">Urbango Cabs</div>
+  <nav class="space-x-6 text-sm">
+    <a href="#" class="hover:text-green-400 transition">Login</a>
+    <a href="https://wa.me/917900505750" target="_blank" class="text-green-400 font-semibold hover:underline">Book Now!</a>
+    <a href="#" class="hover:text-green-400 transition">Help</a>
+    <a href="dashboard.html" class="hover:text-green-400 transition">Admin</a>
+  </nav>
+</header>
 
-    <header>
-        <a href="#" class="logo">UrbanGo<span>Cabs</span></a>
+<!-- Hero -->
+<section class="bg-gradient-to-br from-green-100 via-white to-green-200 text-center py-16 px-4">
+  <h1 class="text-5xl font-extrabold text-gray-900 mb-4 drop-shadow-lg">Welcome to Urbango Cabs</h1>
+  <p class="text-lg text-gray-700 mb-6">Reliable, Affordable, Always Available!</p>
+  <a href="#booking" class="bg-gradient-to-r from-green-500 to-green-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Book Your Ride</a>
+</section>
 
-        <ul class="navbar">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Rides</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">About Us</a></li>
+<!-- Enhanced Booking Form -->
+<section id="booking" class="p-10 bg-gradient-to-b from-white to-green-50">
+  <div class="flex flex-col md:flex-row gap-10 bg-white rounded-xl p-8 shadow-2xl border border-green-300">
+    <form action="https://api.web3forms.com/submit" method="POST" class="w-full md:w-1/2 space-y-6">
+      <h2 class="text-3xl font-bold text-green-700 mb-4">Ready To <span class="text-black">#Ride</span></h2>
 
+      <input type="hidden" name="access_key" value="ef956f9f-9839-4a89-859e-69bc171fa0be" />
+
+      <!-- Personal Details -->
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+          <input type="text" name="name" placeholder="John Doe" class="form-field" required />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Email ID</label>
+          <input type="email" name="email" placeholder="john@example.com" class="form-field" required />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Mobile No.</label>
+          <input type="tel" name="mobile" pattern="[0-9]{10}" maxlength="10" placeholder="9876543210" class="form-field" required />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Pickup Time</label>
+          <input type="datetime-local" name="pickup_time" class="form-field" required />
+        </div>
+      </div>
+
+      <!-- Ride Details -->
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Pickup Location</label>
+          <input type="text" name="pickup_location" placeholder="Connaught Place, Delhi" class="form-field" required />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Destination</label>
+          <input type="text" name="destination" placeholder="Agra Fort, Agra" class="form-field" required />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Special Instructions</label>
+          <textarea name="notes" rows="3" placeholder="E.g., Carrying luggage, need baby seat" class="form-field"></textarea>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white font-bold py-3 rounded-lg shadow-xl transition duration-300 ease-in-out transform hover:scale-105">
+        <i class="fas fa-car mr-2"></i> Book Your Ride
+      </button>
+    </form>
+
+    <!-- Side Image -->
+    <div class="w-full md:w-1/2 flex items-center justify-center">
+      <img src="urbangoimages/back5.png" alt="Urbango Ride" class="rounded-xl shadow-xl max-h-96 object-cover border border-green-200">
+    </div>
+  </div>
+</section>
+
+
+<!-- Google Maps -->
+<section class="p-6">
+  <h2 class="text-3xl font-bold mb-4 text-gray-800">Pickup & Drop Points</h2>
+  <div id="map" class="w-full h-96 rounded-lg shadow-xl border border-green-200"></div>
+</section>
+<script>
+  function initMap() {
+    const location = { lat: 28.6139, lng: 77.2090 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 10,
+      center: location,
+    });
+    new google.maps.Marker({ position: location, map: map });
+  }
+</script>
+
+<!-- Car Fleet -->
+<section class="p-6 bg-gradient-to-br from-gray-50 via-white to-green-100">
+  <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Car Fleet</h2>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="urbangoimages/car1.jpg" alt="Car 1" class="rounded-lg shadow-md w-full h-64 object-cover"></div>
+      <div class="swiper-slide"><img src="urbangoimages/car2.jpg" alt="Car 2" class="rounded-lg shadow-md w-full h-64 object-cover"></div>
+      <div class="swiper-slide"><img src="urbangoimages/car3.jpg" alt="Car 3" class="rounded-lg shadow-md w-full h-64 object-cover"></div>
+    </div>
+  </div>
+</section>
+<script>
+  new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 15,
+    breakpoints: {
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+    autoplay: { delay: 3000 },
+  });
+</script>
+
+<!-- Itineraries -->
+<section class="p-6">
+  <h2 class="text-3xl font-bold mb-6">Popular Itineraries</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white border rounded-lg p-5 shadow-md hover:shadow-xl transition">
+      <h3 class="text-xl font-semibold mb-2">Delhi to Agra</h3>
+      <p class="text-gray-600 mb-2">Experience the Taj Mahal in style.</p>
+      <a href="itinerary.html?trip=delhi-agra" class="text-green-600 font-medium hover:underline">View Details →</a>
+    </div>
+    <div class="bg-white border rounded-lg p-5 shadow-md hover:shadow-xl transition">
+      <h3 class="text-xl font-semibold mb-2">Mumbai to Lonavala</h3>
+      <p class="text-gray-600 mb-2">Weekend escape to the hills.</p>
+      <a href="itinerary.html?trip=mumbai-lonavala" class="text-green-600 font-medium hover:underline">View Details →</a>
+    </div>
+    <div class="bg-white border rounded-lg p-5 shadow-md hover:shadow-xl transition">
+      <h3 class="text-xl font-semibold mb-2">Bangalore to Coorg</h3>
+      <p class="text-gray-600 mb-2">Nature retreat with scenic drives.</p>
+      <a href="itinerary.html?trip=bangalore-coorg" class="text-green-600 font-medium hover:underline">View Details →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Section -->
+<section class="p-6 bg-gradient-to-br from-white to-green-50">
+  <h2 class="text-3xl font-bold mb-6">Latest News & Blog</h2>
+  <div id="blog-container" class="grid md:grid-cols-3 gap-6"></div>
+</section>
+<script>
+  const blogPosts = [
+    {
+      title: "Top 5 Road Trips from Delhi",
+      image: "urbangoimages/blog1.jpg",
+      content: "Explore the best weekend road trips from Delhi including Agra, Jaipur and more...",
+      link: "blog.html?id=road-trips-delhi"
+    },
+    {
+      title: "Why Choose Urbango for Daily Commute?",
+      image: "urbangoimages/blog2.jpg",
+      content: "Affordable rates, real-time tracking, and professional drivers make Urbango a top pick.",
+      link: "blog.html?id=daily-commute"
+    }
+  ];
+  const blogContainer = document.getElementById("blog-container");
+  blogPosts.forEach(post => {
+    const div = document.createElement("div");
+    div.className = "bg-white border rounded-lg overflow-hidden shadow-md hover:shadow-xl transition";
+    div.innerHTML = `
+      <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-lg font-semibold mb-2">${post.title}</h3>
+        <p class="text-gray-600 text-sm mb-3">${post.content}</p>
+        <a href="${post.link}" class="text-green-600 font-semibold text-sm hover:underline">Read more →</a>
+      </div>`;
+    blogContainer.appendChild(div);
+  });
+</script>
+
+<!-- Partner With Us -->
+<section class="p-6 bg-gradient-to-br from-green-50 to-white">
+  <h2 class="text-3xl font-bold mb-4">Partner With Us</h2>
+  <p class="mb-4 text-sm text-gray-700">Are you a cab owner or travel agency? Join Urbango to grow your business with us.</p>
+  <a href="partner.html" class="bg-green-600 text-white px-5 py-3 rounded font-semibold shadow-md hover:bg-green-700 transition">Join as Partner</a>
+</section>
+
+<!-- Live Chat -->
+<script>
+  (function() {
+    var tawk = document.createElement("script");
+    tawk.async = true;
+    tawk.src = 'https://embed.tawk.to/YOUR_TAWKTO_ID/default';
+    tawk.charset = 'UTF-8';
+    tawk.setAttribute('crossorigin', '*');
+    document.body.appendChild(tawk);
+  })();
+</script>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-r from-gray-900 to-black text-white py-12 mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+      <!-- Brand -->
+      <div>
+        <h3 class="text-2xl font-bold text-green-400 mb-3">Urbango Cabs</h3>
+        <p class="text-sm text-gray-300">Your go-to cab service for affordable, reliable, and comfortable rides across India.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="#" class="hover:text-green-400 transition">Home</a></li>
+          <li><a href="#booking" class="hover:text-green-400 transition">Book a Cab</a></li>
+          <li><a href="itinerary.html" class="hover:text-green-400 transition">Itineraries</a></li>
+          <li><a href="blog.html" class="hover:text-green-400 transition">Blog</a></li>
         </ul>
+      </div>
 
-        <div class="h-right">
-            <a href="#"></a>
-            <a href="https://x.com/urbangocabs/"><i class="ri-twitter-x-fill"></i></a>
-            <a href="https://www.instagram.com/urbangocabs/"><i class="ri-instagram-fill"></i></a>
-            <a href="https://wa.me/917900505750"><i class="ri-whatsapp-fill"></i></a>
-            <div class="bx bx-menu" id="menu-icon"><i class="ri-menu-line"></i></div>
+      <!-- Company -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Company</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="partner.html" class="hover:text-green-400 transition">Partner With Us</a></li>
+          <li><a href="dashboard.html" class="hover:text-green-400 transition">Admin Dashboard</a></li>
+          <li><a href="#" class="hover:text-green-400 transition">Help & Support</a></li>
+          <li><a href="#" class="hover:text-green-400 transition">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Social & Contact -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Connect With Us</h4>
+        <div class="flex space-x-4 text-2xl mb-4">
+          <a href="#" class="hover:text-green-400"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-green-400"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-green-400"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-green-400"><i class="fab fa-linkedin-in"></i></a>
         </div>
+        <p class="text-sm text-gray-400">📞 +91 7900505750</p>
+        <p class="text-sm text-gray-400">✉️ support@urbango.in</p>
+      </div>
+    </div>
 
-    </header>
+    <!-- Bottom Line -->
+    <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+      © 2025 <span class="font-semibold text-white">Urbango Cabs</span>. All rights reserved.
+    </div>
+  </div>
+</footer>
 
-    <!--home section-->
+<!-- Tailwind Utility Override -->
+<style>
+  .form-field {
+    @apply w-full p-3 rounded-lg border-2 border-green-200 bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 transition;
+  }
+</style>
 
-    <section class="home">
-        <div class="home-text">
-            <h5>-Enjoy The Best and Beautiful Tours With Us</h5>
-            <h1>#Book Ride Enjoy!</h1>
-            <p>"Explore Agra’s Timeless Beauty with Urbango Cabs.
-            Dive into Agra’s rich heritage, from the majestic Taj Mahal to the Agra Fort, and more.
-            Our expert tours let you experience Agra's vibrant culture, cuisine, and festivals. Beyond Agra, we offer reliable,
-            all-India cab services, connecting Agra to cities across India with one-way, round-trip, and intercity travel options. 
-            Enjoy a seamless journey, whether you're a domestic or international traveler, with Urbango Cabs—your gateway to Agra and beyond."</p>
-
-            <a href="https://wa.me/917900505750" class="btn">Book Now!</a>
-
-        </div>
-
-    </section>
-
-    <!--services section-->
-
-    <section class="services">
-        <div class="services-content">
-
-            <div class="row">
-                <div class="row-img">
-                    <img src="urbangoimages/destination logo.jpg" alt="">
-                </div>
-                <h4>50+ DESTINATIONS</h4>
-            </div>
-
-            <div class="row">
-                <div class="row-img">
-                    <img src="urbangoimages/Happy customer logo.jpg" alt="">
-                </div>
-                <h4>2000+ HAPPY CUSTOMERS</h4>
-            </div>           
-
-            <div class="row">
-                <div class="row-img">
-                    <img src="urbangoimages/Best price logo.png" alt="">
-                </div>
-                <h4>VALUE-DRIVEN PRICING</h4>
-            </div>
-
-            <div class="row">
-                <div class="row-img">
-                    <img src="urbangoimages/Support logo.jpg" alt="">
-                </div>
-                <h4>24x7 SUPPORT</h4>
-            </div>
-        </div>
-    </section>
-
-    <!--intro section-->
-
-    <section>
-        <div class="intro-text">
-            <h2>"Affordable, Reliable Travel Solutions"<br></h2> <h4>Across Agra, Mathura, Delhi & Beyond !</h4>
-            <p>Experience comfort and convenience with Urbango Cabs, your trusted partner for local and outstation travel. 
-        Offering round trips, airport transfers, one-way rides, wedding bookings, and monthly car rentals.</p>
-        </div>
-    </section>
-
-    <!--vehicle section
-
-    <section class="vehicle">
-        <div class="vehicle-img">
-            <img src="Swift Dzire 2019 Price In India, HD Png Download , Transparent Png Image - PNGitem.jpg" alt="">
-        </div>
-
-    -->
-
-    </section>
-
-    <!--tours-->
-
-    <section class="tours">
-        <div class="center-text">
-            <h2>In Station Tours</h2>
-        </div>
-
-        <div class="tour-content">
-            <div class="box">
-                <img src="urbangoimages/TajMahal.jpg" alt="">
-                <h4>Taj Mahal</h4>
-            </div>
-
-            <div class="box">
-                <img src="urbangoimages/AgraFort.jpg" alt="">
-                <h4>Agra Fort</h4>
-            </div>
-
-            <div class="box">
-                <img src="urbangoimages/fatehpur sikri.jpg" alt="">
-                <h4>Fatehpur Sikri</h4>
-            </div>
-
-<!--
-
-            <div class="box">
-                <img src="itmad ud daulah.jpg" alt="">
-                <h4>Itmad Ud Daulah</h4>
-            </div>
-
--->
-
-        </div>
-        
-        <div class="more">
-            <h4>For More Info:</h4>
-        <div class="center-btn">
-            <a href="#" class="btn">Click Here!</a>
-        </div>
-        </div>
-
-    </section>
-
-
-    <!--Booking Form-->
-
-
-    <section class="form">
-        <div class="form-container">
-            <form action="https://api.web3forms.com/submit" method="POST" method="POST" class="contact-left">
-                <div class="contact-left-title">
-                    <h2>Ready To <span>#Ride</span></h2>
-                    <hr>
-                </div>
-                <input type="hidden" name="access_key" value="ef956f9f-9839-4a89-859e-69bc171fa0be">
-                <input type="text" name="name" placeholder="Full Name" class="contact-input" required>
-                <input type="email" name="email" placeholder="Email ID" class="contact-input" required>
-                <input type="Mobile No." name="mobile no." placeholder="Mobile No." class="contact-input" required>
-                <button type="submit">Book</button>
-            </form>
-        <div class="contact-right" >
-            <img src="urbangoimages/back5.png">
-        </div>
-    
-            </div>
-        </div>
-    </section>
-
-
-    <!--Testimonials-->
-
-
-    <section class="reviews">
-        <div class="reviews-text">
-            <h2>Customer Experience</h2>
-        </div>
-
-        <div class="customer-reviews">
-
-            <div class="row">
-
-                <h4>– Amit Sharma</h4>
-                <p>"Urbango Cabs made our trip unforgettable! The vehicle was clean,
-                the driver was professional, and the service was excellent!"</p>
-            </div>
-
-            <div class="row">
-                
-                <h4>– Priya Verma</h4>
-                <p>"Affordable and reliable! Urbango Cabs ensured our wedding
-                transportation was seamless and stress-free. Great experience!"</p>
-            </div>           
-
-            <div class="row">
-                
-                <h4>– Ravi Mehra</h4>
-                <p>"From Agra to Jaipur, the ride was smooth and comfortable.
-                The team is punctual and professional. Will book again!"</p>
-            </div>
-
-            <div class="row">
-                
-                <h4>– Sunita Singh</h4>
-                <p>"Outstanding service! The driver was knowledgeable and polite,
-                and the booking process was so easy. Thank you, Urbango Cabs!"</p>
-            </div>
-        </div>
-
-    </section>
-
-
-        <!--About Us-->
-
-    <section class="about-us">
-        <div class="about-us-head">
-            <h2>About<span>Us</span></h2>
-
-        <div class="about-us-text">
-            <div class="box">
-                <h3>Our Mission</h3>
-                <p>To make every journey affordable, comfortable, and memorable. 
-                Urbango Cabs is dedicated to bringing convenient and stress-free 
-                travel to the people of Agra, Mathura, Delhi, and beyond. We aim 
-                to provide reliable, affordable transportation solutions with a personal touch.
-            </p>
-        </div>
-
-            <div class="box">
-                <h3>Our Vision</h3>
-                <p>We’re here to be India’s leading affordable travel service provider, enhancing 
-                customer experiences and expanding our reach with a focus on quality service.
-                </p>
-            </div>
-            </div>
-            </div>
-        </section>
-
-
-        <!--Footer Section-->
-
-        <section class="footer">
-            <div class="footer-box">
-                <h3>Cities</h3>
-                <a href="#">Agra</a>
-                <a href="#">Mathura</a>
-                <a href="#">Delhi</a>
-                <a href="#">Jaipur</a>
-            </div>
-            <div class="footer-box">
-                <h3>Services</h3>
-                <a href="#">In Station</a>
-                <a href="#">Out Station</a>
-                <a href="#">rentals</a>
-            </div>
-            
-            <div class="footer-box">
-                <h3>Help</h3>
-                <a href="#">FAQs</a>
-                <a href="#">Contact Us</a>
-            </div>
-
-            <div class="footer-box">
-                <div class="social">
-                <a href="https://x.com/urbangocabs/"><i class="ri-twitter-x-fill"></i></a>
-                <a href="https://www.instagram.com/urbangocabs/"><i class="ri-instagram-fill"></i></a>
-                <a href="https://wa.me/917900505750"><i class="ri-whatsapp-fill"></i></a>
-                </div>
-            </div>
-
-        </section>
-
-        <!--Copyright-->
-
-        <div class="copyright">
-            <p>Copyright: © 2024 Urbango Cabs</p>
-        </div>
-
-
-
-    <!--custom js file link-->
-
-    <script src="scriptgo4.js"></script>
-    
 </body>
 </html>
