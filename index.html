@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="transition duration-300">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,19 +9,101 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=REPLACE_WITH_YOUR_VALID_API_KEY&callback=initMap"></script>
+  <style>
+    .form-field {
+      @apply w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500;
+    }
+    .animate-menu {
+      transition: all 0.3s ease-in-out;
+    }
+    .animate-fade-in-down {
+      animation: fadeInDown 0.3s ease-in-out;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .slide-down-enter {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    .slide-down-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800 font-sans scroll-smooth">
+<body class="bg-white text-gray-800 font-sans scroll-smooth transition-colors duration-300">
 
 <!-- Header -->
-<header class="p-4 flex justify-between items-center shadow-lg bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white">
-  <div class="text-2xl font-bold text-green-400">Urbango Cabs</div>
-  <nav class="space-x-6 text-sm">
-    <a href="#" class="hover:text-green-400 transition">Login</a>
-    <a href="https://wa.me/917900505750" target="_blank" class="text-green-400 font-semibold hover:underline">Book Now!</a>
-    <a href="#" class="hover:text-green-400 transition">Help</a>
-    <a href="dashboard.html" class="hover:text-green-400 transition">Admin</a>
-  </nav>
+<header class="p-4 shadow-xl bg-gradient-to-r from-black via-green-700 to-black text-white fixed top-0 left-0 right-0 z-50">
+  <div class="container mx-auto flex justify-between items-center">
+    <span class="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-200 animate-pulse">Urbango <span class="text-white">Cabs</span></span>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-10 text-sm font-semibold">
+      <a href="#" class="hover:text-green-300 transition duration-200">Login</a>
+      <a href="https://wa.me/917900505750" target="_blank" class="text-green-300 font-semibold hover:underline">Book Now!</a>
+      <a href="#" class="hover:text-green-300 transition duration-200">Help</a>
+    </nav>
+
+    <!-- Mobile Toggle -->
+    <div class="flex items-center space-x-4 md:hidden">
+      <button onclick="toggleDarkMode()" class="text-white hover:text-green-300 text-xl" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button id="menuToggle" onclick="toggleMenu()" class="text-white text-3xl focus:outline-none animate-menu" aria-label="Toggle Menu">
+        <i id="menuIcon" class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden mt-3 bg-white text-gray-900 shadow-xl rounded-lg p-5 w-52 space-y-3 absolute right-4 slide-down-enter">
+    <a href="#" class="block hover:text-green-600 font-medium">Login</a>
+    <a href="https://wa.me/917900505750" target="_blank" class="block text-green-600 font-bold">Book Now!</a>
+    <a href="#" class="block hover:text-green-600 font-medium">Help</a>
+  </div>
 </header>
+
+<!-- REMAINING HTML CONTENT UNCHANGED -->
+
+<script>
+  let isDark = false;
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const icon = document.getElementById('menuIcon');
+    if (!isMenuOpen) {
+      menu.classList.remove('hidden');
+      menu.classList.add('slide-down-enter-active');
+    } else {
+      menu.classList.add('hidden');
+      menu.classList.remove('slide-down-enter-active');
+    }
+    isMenuOpen = !isMenuOpen;
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+  }
+
+  function toggleDarkMode() {
+    isDark = !isDark;
+    document.documentElement.classList.toggle('dark');
+    document.body.classList.toggle('bg-white');
+    document.body.classList.toggle('bg-gray-900');
+    document.body.classList.toggle('text-gray-800');
+    document.body.classList.toggle('text-white');
+    localStorage.setItem('darkMode', isDark);
+  }
+
+  window.onload = () => {
+    if (localStorage.getItem('darkMode') === 'true') {
+      toggleDarkMode();
+    }
+  };
+</script>
 
 <!-- Hero -->
 <section class="bg-gradient-to-br from-green-200 via-white to-green-100 text-center py-20 px-4">
