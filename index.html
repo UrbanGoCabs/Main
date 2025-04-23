@@ -40,7 +40,10 @@
 <!-- Header -->
 <header class="p-4 shadow-xl bg-gradient-to-r from-black via-green-700 to-black text-white fixed top-0 left-0 right-0 z-50">
   <div class="container mx-auto flex justify-between items-center">
-    <span class="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-200 animate-pulse">Urbango <span class="text-white">Cabs</span></span>
+    <!-- Logo -->
+    <span class="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-200 animate-pulse">
+      Urbango <span class="text-white">Cabs</span>
+    </span>
 
     <!-- Desktop Nav -->
     <nav class="hidden md:flex space-x-10 text-sm font-semibold">
@@ -49,26 +52,26 @@
       <a href="#" class="hover:text-green-300 transition duration-200">Help</a>
     </nav>
 
-    <!-- Mobile Toggle -->
+    <!-- Mobile Toggles -->
     <div class="flex items-center space-x-4 md:hidden">
       <button onclick="toggleDarkMode()" class="text-white hover:text-green-300 text-xl" aria-label="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
       </button>
-      <button id="menuToggle" onclick="toggleMenu()" class="text-white text-3xl focus:outline-none animate-menu" aria-label="Toggle Menu">
+      <button id="menuToggle" onclick="toggleMenu()" class="text-white text-3xl focus:outline-none" aria-label="Toggle Menu">
         <i id="menuIcon" class="fas fa-bars"></i>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden md:hidden mt-3 bg-white text-gray-900 shadow-xl rounded-lg p-5 w-52 space-y-3 absolute right-4 slide-down-enter">
-    <a href="#" class="block hover:text-green-600 font-medium">Login</a>
-    <a href="https://wa.me/917900505750" target="_blank" class="block text-green-600 font-bold">Book Now!</a>
-    <a href="#" class="block hover:text-green-600 font-medium">Help</a>
+  <!-- Mobile Menu Bar -->
+  <div id="mobileMenu" class="fixed top-16 right-4 hidden bg-white text-gray-900 shadow-2xl rounded-xl overflow-hidden w-56 transform transition-transform duration-300 origin-top-right">
+    <div class="flex flex-col">
+      <a href="#" class="px-6 py-3 hover:bg-gray-100 font-medium">Login</a>
+      <a href="https://wa.me/917900505750" target="_blank" class="px-6 py-3 bg-green-600 text-white font-semibold hover:bg-green-700">Book Now!</a>
+      <a href="#" class="px-6 py-3 hover:bg-gray-100 font-medium">Help</a>
+    </div>
   </div>
 </header>
-
-<!-- REMAINING HTML CONTENT UNCHANGED -->
 
 <script>
   let isDark = false;
@@ -79,10 +82,10 @@
     const icon = document.getElementById('menuIcon');
     if (!isMenuOpen) {
       menu.classList.remove('hidden');
-      menu.classList.add('slide-down-enter-active');
+      menu.classList.add('scale-y-100');
     } else {
       menu.classList.add('hidden');
-      menu.classList.remove('slide-down-enter-active');
+      menu.classList.remove('scale-y-100');
     }
     isMenuOpen = !isMenuOpen;
     icon.classList.toggle('fa-bars');
@@ -105,30 +108,6 @@
     }
   };
 </script>
-
-<!-- Hero Card -->
-<section class="flex items-center justify-center py-20 px-4 bg-gray-100">
-  <div class="relative bg-black text-white rounded-2xl shadow-2xl overflow-hidden max-w-lg w-full p-12">
-    <!-- Layered Spotlights -->
-    <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-      <div class="w-64 h-64 bg-white/5 rounded-full filter blur-3xl transform -translate-x-1/3 -translate-y-1/3 animate-pulse"></div>
-      <div class="w-80 h-80 bg-white/10 rounded-full filter blur-4xl transform translate-x-1/4 translate-y-1/4"></div>
-    </div>
-
-    <div class="relative z-10 text-center">
-      <h1 class="text-5xl font-extrabold uppercase tracking-tight mb-4 drop-shadow-lg">
-        Urbango Cabs
-      </h1>
-      <p class="text-lg font-medium mb-8 opacity-80">
-        Reliable. Timeless. Always There.
-      </p>
-      <a href="#booking"
-         class="inline-block bg-white text-black font-semibold text-base uppercase px-8 py-3 rounded-full shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-        Book Your Ride
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- Booking -->
 <section id="booking" class="p-10 bg-gradient-to-b from-white to-green-50">
