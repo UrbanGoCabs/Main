@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="transition duration-300">
 <head>
@@ -11,7 +12,7 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=REPLACE_WITH_YOUR_VALID_API_KEY&callback=initMap"></script>
   <style>
-     html, body {
+  html, body {
     max-width: 100%;
     overflow-x: hidden;
   }
@@ -170,7 +171,6 @@
     </div>
   </div>
 </section>
-
 <!-- Map -->
 <section class="p-6 hidden">
   <h2 class="text-3xl font-bold mb-4 text-gray-800">Pickup & Drop Points</h2>
@@ -369,10 +369,36 @@
 </script>
 
 <!-- Partner CTA -->
-<section class="p-6 bg-gradient-to-br from-green-50 to-white">
-  <h2 class="text-3xl font-bold mb-4">Partner With Us</h2>
-  <p class="mb-4 text-sm text-gray-700">Are you a cab owner or travel agency? Join Urbango to grow your business with us.</p>
-  <a href="partner.html" class="bg-green-600 text-white px-5 py-3 rounded font-semibold shadow-md hover:bg-green-700 transition">Join as Partner</a>
+<section class="py-12 px-6 bg-gradient-to-br from-green-50 via-white to-emerald-50 text-center">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-4xl font-extrabold text-emerald-700 mb-4">Grow Your Cab Business with Urbango</h2>
+    <p class="text-gray-700 text-lg mb-6">Are you a cab owner, fleet operator, or travel agency? Join our expanding network and unlock new earning opportunities, better bookings, and long-term growth.</p>
+    
+    <!-- Key Benefits -->
+    <div class="grid sm:grid-cols-3 gap-6 mb-8 text-left">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <i class="fas fa-briefcase text-green-600 text-2xl mb-3"></i>
+        <h3 class="font-semibold text-lg mb-1">Steady Bookings</h3>
+        <p class="text-sm text-gray-600">Get more ride requests and outstation bookings from verified customers.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <i class="fas fa-bolt text-green-600 text-2xl mb-3"></i>
+        <h3 class="font-semibold text-lg mb-1">Zero Commission</h3>
+        <p class="text-sm text-gray-600">Keep 100% of your earnings. No hidden fees or platform cuts.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <i class="fas fa-users text-green-600 text-2xl mb-3"></i>
+        <h3 class="font-semibold text-lg mb-1">Partner Support</h3>
+        <p class="text-sm text-gray-600">Get dedicated support and tools to manage rides and growth.</p>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <a href="partner.html" 
+       class="inline-block bg-gradient-to-r from-green-600 to-emerald-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">
+      🚗 Join as a Partner Now
+    </a>
+  </div>
 </section>
 
 <!-- Live Chat -->
@@ -436,6 +462,67 @@
     @apply w-full p-3 rounded-lg border border-green-300 bg-green-50 shadow-inner focus:outline-none focus:ring-2 focus:ring-green-500 transition;
   }
 </style>
+
+<!-- Popup Form -->
+<div id="popupForm" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden transition-opacity duration-300">
+  <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full relative animate__animated animate__fadeIn">
+    
+    <!-- Close Button -->
+    <button onclick="document.getElementById('popupForm').classList.add('hidden')" 
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-600 transition duration-200">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    
+    <!-- Heading -->
+    <h3 class="text-2xl font-bold text-emerald-700 mb-6 text-center">Quick Enquiry</h3>
+
+    <!-- Form -->
+    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+      <input type="hidden" name="access_key" value="ef956f9f-9839-4a89-859e-69bc171fa0be" />
+      
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+        <input type="text" name="name" placeholder="John Doe" required 
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input type="email" name="email" placeholder="you@example.com" required 
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+        <input type="tel" name="mobile" placeholder="+91 9876543210" required 
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+        <textarea name="message" placeholder="Tell us what you need..." rows="3"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"></textarea>
+      </div>
+
+      <button type="submit" 
+              class="w-full bg-gradient-to-r from-green-500 to-emerald-700 text-white py-2.5 rounded-lg font-semibold hover:scale-105 transition-transform">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Script to show popup after 5 seconds -->
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(() => {
+      document.getElementById("popupForm").classList.remove("hidden");
+    }, 5000); // 5 seconds
+  });
+</script>
+
+<!-- Optional animation (Add Animate.css CDN for effect) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 </body>
 </html>
