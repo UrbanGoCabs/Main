@@ -960,68 +960,613 @@
 </style>
 
 
+<!-- Itineraries Section -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-green-50 to-emerald-50">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header with Animation -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-700">Popular Travel Itineraries</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Expertly crafted routes for your perfect road trip experience across India
+      </p>
+      <div class="mt-6 w-24 h-1.5 bg-gradient-to-r from-green-400 to-emerald-600 mx-auto rounded-full"></div>
+    </div>
 
-<!-- Itineraries -->
-<section class="p-6">
-  <h2 class="text-3xl font-bold mb-6">Popular Itineraries</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="bg-white border rounded-lg p-5 shadow-md hover:shadow-xl transition">
-      <h3 class="text-xl font-semibold mb-2">Delhi to Agra</h3>
-      <p class="text-gray-600 mb-2">Experience the Taj Mahal in style.</p>
-      <a href="itinerary.html?trip=delhi-agra" class="text-green-600 font-medium hover:underline">View Details →</a>
+    <!-- Itinerary Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Delhi to Agra -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500" 
+           data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+        <img src="urbangoimages/delhi-agra.jpg" alt="Delhi to Agra road trip with Taj Mahal view" 
+             class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700">
+        
+        <div class="absolute bottom-0 left-0 right-0 z-20 p-6 text-white">
+          <div class="flex items-center mb-2">
+            <span class="bg-emerald-500 text-xs font-semibold px-3 py-1 rounded-full mr-2">Most Popular</span>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full">6-8 Hours</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-1 group-hover:text-emerald-300 transition-colors">Delhi to Agra</h3>
+          <p class="text-sm opacity-90 mb-3">Iconic journey to the magnificent Taj Mahal</p>
+          
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full flex items-center">
+              <i class="fas fa-map-marker-alt mr-1"></i> 240 km
+            </span>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full flex items-center">
+              <i class="fas fa-car mr-1"></i> Yamuna Expressway
+            </span>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full flex items-center">
+              <i class="fas fa-rupee-sign mr-1"></i> ₹3,500 approx
+            </span>
+          </div>
+        </div>
+        
+        <!-- Hover Content -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 p-6 flex flex-col justify-end">
+          <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+            <h4 class="text-lg font-semibold text-white mb-3">Highlights:</h4>
+            <ul class="text-sm text-gray-300 space-y-2 mb-4">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-emerald-400 mt-1 mr-2"></i>
+                <span>Early morning departure for best experience</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-emerald-400 mt-1 mr-2"></i>
+                <span>Visit Taj Mahal, Agra Fort & Mehtab Bagh</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-emerald-400 mt-1 mr-2"></i>
+                <span>Lunch at premium rooftop restaurant</span>
+              </li>
+            </ul>
+            <a href="itinerary.html?trip=delhi-agra" 
+               class="inline-flex items-center text-emerald-400 font-medium hover:text-emerald-300 transition-colors">
+              Explore full itinerary
+              <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delhi to Jaipur -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500" 
+           data-aos="fade-up" data-aos-delay="200">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+        <img src="urbangoimages/delhi-jaipur.jpg" alt="Delhi to Jaipur road trip with Hawa Mahal view" 
+             class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700">
+        
+        <div class="absolute bottom-0 left-0 right-0 z-20 p-6 text-white">
+          <div class="flex items-center mb-2">
+            <span class="bg-amber-500 text-xs font-semibold px-3 py-1 rounded-full mr-2">Heritage</span>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full">8-10 Hours</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-1 group-hover:text-amber-300 transition-colors">Delhi to Jaipur</h3>
+          <p class="text-sm opacity-90 mb-3">Royal journey to the Pink City</p>
+          
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full flex items-center">
+              <i class="fas fa-map-marker-alt mr-1"></i> 280 km
+            </span>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full flex items-center">
+              <i class="fas fa-car mr-1"></i> NH48
+            </span>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full flex items-center">
+              <i class="fas fa-rupee-sign mr-1"></i> ₹4,200 approx
+            </span>
+          </div>
+        </div>
+        
+        <!-- Hover Content -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 p-6 flex flex-col justify-end">
+          <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+            <h4 class="text-lg font-semibold text-white mb-3">Highlights:</h4>
+            <ul class="text-sm text-gray-300 space-y-2 mb-4">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-amber-400 mt-1 mr-2"></i>
+                <span>Visit Hawa Mahal, City Palace & Jantar Mantar</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-amber-400 mt-1 mr-2"></i>
+                <span>Authentic Rajasthani thali lunch</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-amber-400 mt-1 mr-2"></i>
+                <span>Shopping at Johari Bazaar</span>
+              </li>
+            </ul>
+            <a href="itinerary.html?trip=delhi-jaipur" 
+               class="inline-flex items-center text-amber-400 font-medium hover:text-amber-300 transition-colors">
+              Explore full itinerary
+              <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delhi to Shimla -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500" 
+           data-aos="fade-up" data-aos-delay="300">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+        <img src="urbangoimages/delhi-shimla.jpg" alt="Delhi to Shimla road trip with mountain view" 
+             class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700">
+        
+        <div class="absolute bottom-0 left-0 right-0 z-20 p-6 text-white">
+          <div class="flex items-center mb-2">
+            <span class="bg-blue-500 text-xs font-semibold px-3 py-1 rounded-full mr-2">Hill Station</span>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full">2 Days Recommended</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-1 group-hover:text-blue-300 transition-colors">Delhi to Shimla</h3>
+          <p class="text-sm opacity-90 mb-3">Scenic mountain escape to the Queen of Hills</p>
+          
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full flex items-center">
+              <i class="fas fa-map-marker-alt mr-1"></i> 350 km
+            </span>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full flex items-center">
+              <i class="fas fa-car mr-1"></i> NH5
+            </span>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full flex items-center">
+              <i class="fas fa-rupee-sign mr-1"></i> ₹6,500 approx
+            </span>
+          </div>
+        </div>
+        
+        <!-- Hover Content -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 p-6 flex flex-col justify-end">
+          <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+            <h4 class="text-lg font-semibold text-white mb-3">Highlights:</h4>
+            <ul class="text-sm text-gray-300 space-y-2 mb-4">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i>
+                <span>Stop at Pinjore Gardens & Kalka-Shimla Railway</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i>
+                <span>Explore Mall Road & Christ Church</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i>
+                <span>Optional extension to Kufri</span>
+              </li>
+            </ul>
+            <a href="itinerary.html?trip=delhi-shimla" 
+               class="inline-flex items-center text-blue-400 font-medium hover:text-blue-300 transition-colors">
+              Explore full itinerary
+              <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="bg-white border rounded-lg p-5 shadow-md hover:shadow-xl transition">
-      <h3 class="text-xl font-semibold mb-2">Delhi to Dehradun</h3>
-      <p class="text-gray-600 mb-2">Weekend escape to the hills.</p>
-      <a href="itinerary.html?trip=mumbai-lonavala" class="text-green-600 font-medium hover:underline">View Details →</a>
-    </div>
-    <div class="bg-white border rounded-lg p-5 shadow-md hover:shadow-xl transition">
-      <h3 class="text-xl font-semibold mb-2">Agra to Jaipur</h3>
-      <p class="text-gray-600 mb-2">Nature retreat with scenic drives.</p>
-      <a href="itinerary.html?trip=bangalore-coorg" class="text-green-600 font-medium hover:underline">View Details →</a>
+
+    <!-- View All CTA -->
+    <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+      <a href="itineraries.html" 
+         class="inline-flex items-center px-8 py-3.5 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-all duration-300 hover:scale-[1.03]">
+        View All Itineraries
+        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 -mr-1 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
     </div>
   </div>
 </section>
 
+<!-- Schema Markup for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "TouristTrip",
+        "name": "Delhi to Agra Road Trip",
+        "description": "Iconic journey to the magnificent Taj Mahal with stops at Agra Fort and Mehtab Bagh",
+        "url": "https://example.com/itinerary.html?trip=delhi-agra",
+        "itinerary": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "TouristAttraction",
+                "name": "Taj Mahal"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "TouristAttraction",
+                "name": "Agra Fort"
+              }
+            }
+          ]
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "3500",
+          "priceCurrency": "INR"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "TouristTrip",
+        "name": "Delhi to Jaipur Road Trip",
+        "description": "Royal journey to the Pink City visiting Hawa Mahal, City Palace and Jantar Mantar",
+        "url": "https://example.com/itinerary.html?trip=delhi-jaipur",
+        "itinerary": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "TouristAttraction",
+                "name": "Hawa Mahal"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "TouristAttraction",
+                "name": "City Palace"
+              }
+            }
+          ]
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "4200",
+          "priceCurrency": "INR"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "TouristTrip",
+        "name": "Delhi to Shimla Road Trip",
+        "description": "Scenic mountain escape to the Queen of Hills with stops at Pinjore Gardens and Kalka-Shimla Railway",
+        "url": "https://example.com/itinerary.html?trip=delhi-shimla",
+        "itinerary": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "TouristAttraction",
+                "name": "Mall Road"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "TouristAttraction",
+                "name": "Christ Church"
+              }
+            }
+          ]
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "6500",
+          "priceCurrency": "INR"
+        }
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Animation Styles -->
+<style>
+  .itinerary-card {
+    perspective: 1000px;
+  }
+  
+  .itinerary-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .group:hover .itinerary-inner {
+    transform: translateY(-5px);
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>
 
 
 
+<!-- Blog Section -->
+<section class="py-16 px-6 bg-gradient-to-br from-green-50 via-white to-emerald-50" aria-label="Blog and News Section">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header with Semantic Markup -->
+    <header class="text-center mb-14">
+      <h2 class="text-4xl font-extrabold text-emerald-700 mb-4">Latest News & Travel Insights</h2>
+      <div class="max-w-2xl mx-auto">
+        <p class="text-xl text-emerald-600 font-medium mb-3">"From Hotel Hospitality to Highway Comfort"</p>
+        <h3 class="text-3xl font-semibold text-gray-800 mb-4">The Urbango Cabs Story</h3>
+        <div class="mt-6 w-24 h-1.5 bg-gradient-to-r from-green-400 to-emerald-600 mx-auto rounded-full"></div>
+      </div>
+    </header>
 
-<!-- Blog -->
-<section class="p-6 bg-gradient-to-br from-white to-green-50">
-  <h2 class="text-3xl font-bold mb-6">Latest News & Blog</h2>
-  <div id="blog-container" class="grid md:grid-cols-3 gap-6"></div>
+    <!-- Blog Carousel with ARIA attributes -->
+    <div class="relative" role="region" aria-label="Blog posts carousel">
+      <div id="blog-carousel" class="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-hidden" aria-live="polite">
+        <!-- Blog posts injected via JavaScript -->
+      </div>
+      
+      <!-- Navigation Arrows with better accessibility -->
+      <button id="prev-btn" aria-label="Previous blog posts" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-8 bg-white p-3 rounded-full shadow-xl hover:bg-emerald-50 z-10 transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button id="next-btn" aria-label="Next blog posts" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-8 bg-white p-3 rounded-full shadow-xl hover:bg-emerald-50 z-10 transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- View All CTA with matching color scheme -->
+    <div class="text-center mt-12">
+      <a href="/blog" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-all duration-200 hover:scale-105">
+        View All Articles
+        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 -mr-1 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Article",
+        "headline": "Top 5 Road Trips from Delhi",
+        "description": "Explore the best weekend road trips from Delhi including Agra, Jaipur and more...",
+        "url": "https://example.com/blog.html?id=road-trips-delhi"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Article",
+        "headline": "Why Choose Urbango for Daily Commute?",
+        "description": "Affordable rates, real-time tracking, and professional drivers make Urbango a top pick.",
+        "url": "https://example.com/blog.html?id=daily-commute"
+      }
+    }
+  ]
+}
+</script>
+
 <script>
   const blogPosts = [
     {
       title: "Top 5 Road Trips from Delhi",
       image: "urbangoimages/blog1.jpg",
-      content: "Explore the best weekend road trips from Delhi including Agra, Jaipur and more...",
-      link: "blog.html?id=road-trips-delhi"
+      content: "Explore the best weekend road trips from Delhi including Agra, Jaipur and more with our comfortable cabs.",
+      link: "blog.html?id=road-trips-delhi",
+      category: "Travel Guide",
+      date: "2023-05-15",
+      alt: "Scenic road trip from Delhi to mountains"
     },
     {
       title: "Why Choose Urbango for Daily Commute?",
       image: "urbangoimages/blog2.jpg",
-      content: "Affordable rates, real-time tracking, and professional drivers make Urbango a top pick.",
-      link: "blog.html?id=daily-commute"
+      content: "Discover how Urbango's affordable rates, real-time tracking, and professional drivers make commuting better.",
+      link: "blog.html?id=daily-commute",
+      category: "Company",
+      date: "2023-06-02",
+      alt: "Professional driver opening car door"
+    },
+    {
+      title: "From Concierge to Chauffeur: Our Hospitality Journey",
+      image: "urbangoimages/blog3.jpg",
+      content: "How our five-star hotel hospitality roots shaped Urbango's premium cab service standards.",
+      link: "blog.html?id=our-journey",
+      category: "Our Story",
+      date: "2023-04-10",
+      alt: "Luxury hotel concierge helping guests"
+    },
+    {
+      title: "Advanced Safety Features in Urbango Cabs",
+      image: "urbangoimages/blog4.jpg",
+      content: "Learn about the cutting-edge safety measures we've implemented for your complete peace of mind.",
+      link: "blog.html?id=safety-features",
+      category: "Safety",
+      date: "2023-07-22",
+      alt: "Safety features dashboard in Urbango cabs"
+    },
+    {
+      title: "Corporate Travel Solutions for Businesses",
+      image: "urbangoimages/blog5.jpg",
+      content: "How Urbango is revolutionizing business travel with seamless corporate transportation solutions.",
+      link: "blog.html?id=corporate-travel",
+      category: "Business",
+      date: "2023-08-05",
+      alt: "Business professionals entering Urbango cab"
     }
   ];
-  const blogContainer = document.getElementById("blog-container");
-  blogPosts.forEach(post => {
-    const div = document.createElement("div");
-    div.className = "bg-white border rounded-lg overflow-hidden shadow-md hover:shadow-xl transition";
-    div.innerHTML = `
-      <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
-      <div class="p-4">
-        <h3 class="text-lg font-semibold mb-2">${post.title}</h3>
-        <p class="text-gray-600 text-sm mb-3">${post.content}</p>
-        <a href="${post.link}" class="text-green-600 font-semibold text-sm hover:underline">Read more →</a>
-      </div>`;
-    blogContainer.appendChild(div);
-  });
-</script>
 
+  // Initialize carousel
+  const carousel = document.getElementById('blog-carousel');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  let currentIndex = 0;
+  let autoSlideInterval;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  // Create blog cards with semantic HTML
+  function renderBlogPosts() {
+    carousel.innerHTML = '';
+    
+    const visiblePosts = window.innerWidth < 768 ? 
+      [blogPosts[currentIndex % blogPosts.length]] : 
+      [
+        blogPosts[currentIndex % blogPosts.length],
+        blogPosts[(currentIndex + 1) % blogPosts.length],
+        blogPosts[(currentIndex + 2) % blogPosts.length]
+      ];
+    
+    visiblePosts.forEach((post, index) => {
+      const article = document.createElement("article");
+      article.className = "bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 flex flex-col h-full group";
+      article.setAttribute("aria-label", post.title);
+      article.innerHTML = `
+        <div class="relative">
+          <img src="${post.image}" alt="${post.alt}" class="w-full h-52 object-cover" loading="lazy">
+          <span class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full">${post.category}</span>
+        </div>
+        <div class="p-6 flex-grow">
+          <time datetime="${post.date}" class="text-sm text-gray-500">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+          <h3 class="text-xl font-bold mt-2 mb-3 text-gray-900 group-hover:text-emerald-600 transition-colors">
+            <a href="${post.link}" class="focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded-sm">${post.title}</a>
+          </h3>
+          <p class="text-gray-600 mb-4">${post.content}</p>
+        </div>
+        <div class="px-6 pb-6">
+          <a href="${post.link}" class="text-emerald-600 font-semibold hover:underline flex items-center group-hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded-sm">
+            Read more
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>`;
+      carousel.appendChild(article);
+    });
+
+    // Update ARIA attributes for screen readers
+    document.querySelectorAll('#blog-carousel article').forEach((item, index) => {
+      item.setAttribute('aria-posinset', index + 1);
+      item.setAttribute('aria-setsize', visiblePosts.length);
+    });
+  }
+
+  // Navigation functions
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % blogPosts.length;
+    renderBlogPosts();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + blogPosts.length) % blogPosts.length;
+    renderBlogPosts();
+  }
+
+  // Auto-slide functionality
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 7000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+
+  // Touch event handlers for mobile swipe
+  function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }
+
+  function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }
+
+  function handleSwipe() {
+    if (touchEndX < touchStartX - 50) {
+      nextSlide();
+    }
+    if (touchEndX > touchStartX + 50) {
+      prevSlide();
+    }
+  }
+
+  // Event listeners
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    stopAutoSlide();
+    startAutoSlide();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    stopAutoSlide();
+    startAutoSlide();
+  });
+
+  carousel.addEventListener('touchstart', handleTouchStart, {passive: true});
+  carousel.addEventListener('touchend', handleTouchEnd, {passive: true});
+
+  // Handle responsive behavior
+  function handleResize() {
+    renderBlogPosts();
+    stopAutoSlide();
+    startAutoSlide();
+  }
+
+  window.addEventListener('resize', handleResize);
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement === prevBtn || document.activeElement === nextBtn) return;
+    
+    if (e.key === 'ArrowRight') {
+      nextSlide();
+      stopAutoSlide();
+      startAutoSlide();
+    } else if (e.key === 'ArrowLeft') {
+      prevSlide();
+      stopAutoSlide();
+      startAutoSlide();
+    }
+  });
+
+  // Initialize
+  renderBlogPosts();
+  startAutoSlide();
+
+  // Pause auto-slide when hovering or focusing
+  carousel.addEventListener('mouseenter', stopAutoSlide);
+  carousel.addEventListener('mouseleave', startAutoSlide);
+  carousel.addEventListener('focusin', stopAutoSlide);
+  carousel.addEventListener('focusout', startAutoSlide);
+</script>
 
 
 
