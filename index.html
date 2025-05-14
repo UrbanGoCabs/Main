@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" class="transition duration-300">
 <head>
@@ -9,318 +11,117 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=REPLACE_WITH_YOUR_VALID_API_KEY&callback=initMap"></script>
   <style>
-    /* Header Video Background Styles */
-    .header-video-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
-    }
-    
-    .header-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: 0;
-      object-fit: cover;
-    }
-    
-    .video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(26,58,31,0.8));
-      z-index: 1;
-    }
-    
-    /* Floating Glass Header */
-    .floating-header {
-      position: fixed;
-      top: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 95%;
-      max-width: 1400px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 2rem;
-      padding: 1rem 2.5rem;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      z-index: 100;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    
-    .floating-header.scrolled {
-      top: 0;
-      border-radius: 0 0 1.5rem 1.5rem;
-      width: 100%;
+    html, body {
       max-width: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      border: 1px solid rgba(46, 125, 50, 0.3);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      overflow-x: hidden;
     }
-    
-    /* Logo Animation */
-    .logo-text {
-      position: relative;
-      display: inline-block;
+    .form-field {
+      @apply w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500;
     }
-    
-    .logo-text::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 3px;
-      bottom: -5px;
-      left: 0;
-      background: linear-gradient(90deg, #4ade80, #10b981, #059669);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.4s ease;
+    .animate-menu {
+      transition: all 0.3s ease-in-out;
     }
-    
-    .logo-text:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
+    .animate-fade-in-down {
+      animation: fadeInDown 0.3s ease-in-out;
     }
-    
-    /* Nav Link Hover Effects */
-    .nav-link {
-      position: relative;
-      padding: 0.5rem 0;
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
-    
-    .nav-link::before {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #4ade80;
-      transition: width 0.3s ease;
-    }
-    
-    .nav-link:hover::before {
-      width: 100%;
-    }
-    
-    /* Book Now Button */
-    .book-now-btn {
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-    
-    .book-now-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: 0.5s;
-      z-index: -1;
-    }
-    
-    .book-now-btn:hover::before {
-      left: 100%;
-    }
-    
-    /* Hero Content */
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-    
-    /* Scroll Down Indicator */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: bounce 2s infinite;
-    }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) translateX(-50%);
-      }
-      40% {
-        transform: translateY(-20px) translateX(-50%);
-      }
-      60% {
-        transform: translateY(-10px) translateX(-50%);
-      }
-    }
-    
-    /* Mobile Menu Animation */
-    .mobile-menu {
-      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transform: translateY(-20px);
+    .slide-down-enter {
       opacity: 0;
-      visibility: hidden;
+      transform: translateY(-20px);
+    }
+    .slide-down-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
     }
     
-    .mobile-menu.active {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
+    /* New rounded header styles */
+    .rounded-header {
+      border-top-left-radius: 3.5rem;
+      border-top-right-radius: 3.5rem;
+      border-bottom-left-radius: 3.5rem;
+      border-bottom-right-radius: 3.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      background-color: white;
+      position: sticky;
+      top: 1rem;
+      z-index: 50;
+      padding: 1.5rem 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+      background: linear-gradient(to right, black, #1a3a1f, black);
+    }
+    .rounded-header:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    }
+    @media (max-width: 768px) {
+      .rounded-header {
+        padding: 1rem 1.5rem;
+        border-radius: 2.5rem;
+      }
     }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans scroll-smooth transition-colors duration-300">
 
-<!-- Video Header Section -->
-<section class="header-video-container">
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline class="header-video">
-    <!-- Provide multiple video formats for cross-browser compatibility -->
-    <source src="https://assets.mixkit.co/videos/preview/mixkit-road-with-trees-on-the-side-2390-large.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  
-  <!-- Video Overlay -->
-  <div class="video-overlay"></div>
-  
-  <!-- Floating Glass Header -->
-  <header class="floating-header" id="mainHeader">
-    <div class="container mx-auto flex justify-between items-center">
-      <!-- Logo with Animation -->
-      <a href="#" class="flex items-center space-x-2">
-        <span class="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-200 logo-text">
-          Urbango <span class="text-white">Cabs</span>
-        </span>
-      </a>
+<!-- Rounded Header -->
+<header class="rounded-header">
+  <div class="container mx-auto flex justify-between items-center">
+    <span class="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-200 animate-pulse">Urbango <span class="text-white">Cabs</span></span>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-8">
-        <a href="#" class="text-white hover:text-green-300 transition duration-300 nav-link text-sm font-semibold uppercase tracking-wider">
-          Home
-        </a>
-        <a href="#services" class="text-white hover:text-green-300 transition duration-300 nav-link text-sm font-semibold uppercase tracking-wider">
-          Services
-        </a>
-        <a href="#fleet" class="text-white hover:text-green-300 transition duration-300 nav-link text-sm font-semibold uppercase tracking-wider">
-          Our Fleet
-        </a>
-        <a href="#about" class="text-white hover:text-green-300 transition duration-300 nav-link text-sm font-semibold uppercase tracking-wider">
-          About Us
-        </a>
-        <a href="https://wa.me/917900505750" target="_blank" 
-           class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition-all duration-300 book-now-btn">
-          <i class="fas fa-car mr-2"></i> Book Now!
-        </a>
-      </nav>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-10 text-sm font-semibold">
+      <a href="#" class="text-white hover:text-green-300 transition duration-200">Login</a>
+      <a href="https://wa.me/917900505750" target="_blank" class="text-green-300 font-semibold hover:underline">Book Now!</a>
+      <a href="#" class="text-white hover:text-green-300 transition duration-200">Help</a>
+    </nav>
 
-      <!-- Mobile Menu Toggle -->
-      <div class="flex items-center space-x-4 md:hidden">
-        <button onclick="toggleDarkMode()" class="text-white hover:text-green-300 text-xl focus:outline-none" aria-label="Toggle Dark Mode">
-          <i class="fas fa-moon"></i>
-        </button>
-        <button id="menuToggle" onclick="toggleMenu()" class="text-white text-3xl focus:outline-none" aria-label="Toggle Menu">
-          <i id="menuIcon" class="fas fa-bars"></i>
-        </button>
-      </div>
-    </div>
-    
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="mobile-menu absolute top-full right-4 mt-2 bg-white text-gray-900 shadow-2xl rounded-xl p-5 w-64 hidden md:hidden">
-      <a href="#" class="block py-2 px-4 hover:bg-green-50 rounded-lg font-medium transition">Home</a>
-      <a href="#services" class="block py-2 px-4 hover:bg-green-50 rounded-lg font-medium transition">Services</a>
-      <a href="#fleet" class="block py-2 px-4 hover:bg-green-50 rounded-lg font-medium transition">Our Fleet</a>
-      <a href="#about" class="block py-2 px-4 hover:bg-green-50 rounded-lg font-medium transition">About Us</a>
-      <a href="https://wa.me/917900505750" target="_blank" class="block mt-2 bg-green-500 text-white py-2 px-4 rounded-lg font-bold text-center">
-        <i class="fas fa-car mr-2"></i> Book Now!
-      </a>
-    </div>
-  </header>
-  
-  <!-- Hero Content -->
-  <div class="hero-content relative h-full flex flex-col justify-center items-center text-center px-4">
-    <div class="max-w-4xl">
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-        <span class="block">Premium <span class="text-green-400">Cab Services</span></span>
-        <span class="block">Across <span class="text-green-400">India</span></span>
-      </h1>
-      
-      <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
-        Safe, affordable, and punctual rides with GPS-tracked AC cabs. 
-        <span class="block sm:inline">Book online in 30 seconds or call for instant booking!</span>
-      </p>
-      
-      <div class="flex flex-col sm:flex-row justify-center gap-6">
-        <a href="#booking" 
-           class="bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
-           aria-label="Book your cab ride now">
-          <i class="fas fa-car mr-3"></i> Book Your Ride Now
-        </a>
-        <a href="tel:+917900505750" 
-           class="bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border-2 border-white/30 hover:border-green-400 px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
-           aria-label="Call Urbango Cabs customer support">
-          <i class="fas fa-phone-alt mr-3"></i> Call: +91 7900505750
-        </a>
-      </div>
-    </div>
-    
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <a href="#services" class="text-white hover:text-green-400 text-2xl" aria-label="Scroll to services section">
-        <i class="fas fa-chevron-down"></i>
-      </a>
+    <!-- Mobile Toggle -->
+    <div class="flex items-center space-x-4 md:hidden">
+      <button onclick="toggleDarkMode()" class="text-white hover:text-green-300 text-xl" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button id="menuToggle" onclick="toggleMenu()" class="text-white text-3xl focus:outline-none animate-menu" aria-label="Toggle Menu">
+        <i id="menuIcon" class="fas fa-bars"></i>
+      </button>
     </div>
   </div>
-</section>
 
-<!-- Rest of your content remains the same -->
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden mt-3 bg-white text-gray-900 shadow-xl rounded-lg p-5 w-52 space-y-3 absolute right-4 slide-down-enter">
+    <a href="#" class="block hover:text-green-600 font-medium">Login</a>
+    <a href="https://wa.me/917900505750" target="_blank" class="block text-green-600 font-bold">Book Now!</a>
+    <a href="#" class="block hover:text-green-600 font-medium">Help</a>
+  </div>
+</header>
+
+<!-- REMAINING HTML CONTENT UNCHANGED -->
 
 <script>
-  // Header Scroll Effect
-  window.addEventListener('scroll', function() {
-    const header = document.getElementById('mainHeader');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-
-  // Mobile Menu Toggle
+  let isDark = false;
   let isMenuOpen = false;
+
   function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     const icon = document.getElementById('menuIcon');
-    
     if (!isMenuOpen) {
       menu.classList.remove('hidden');
-      menu.classList.add('active');
+      menu.classList.add('slide-down-enter-active');
     } else {
-      menu.classList.remove('active');
-      setTimeout(() => {
-        menu.classList.add('hidden');
-      }, 500); // Match this with your CSS transition duration
+      menu.classList.add('hidden');
+      menu.classList.remove('slide-down-enter-active');
     }
-    
     isMenuOpen = !isMenuOpen;
     icon.classList.toggle('fa-bars');
     icon.classList.toggle('fa-times');
   }
 
-  // Dark Mode Toggle
-  let isDark = false;
   function toggleDarkMode() {
     isDark = !isDark;
     document.documentElement.classList.toggle('dark');
@@ -331,21 +132,16 @@
     localStorage.setItem('darkMode', isDark);
   }
 
-  // Check for saved dark mode preference
   window.onload = () => {
     if (localStorage.getItem('darkMode') === 'true') {
       toggleDarkMode();
     }
-    
-    // Initialize header state
-    const header = document.getElementById('mainHeader');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    }
   };
 </script>
 
-<!-- Rest of your scripts remain the same -->
+
+
+
 <!-- Hero Section - Premium Cab Services | Urbango Cabs -->
 <section class="relative pt-28 pb-20 md:pt-36 md:pb-24 px-4 bg-gradient-to-br from-green-100 via-white to-green-50">
   <!-- Decorative background elements -->
